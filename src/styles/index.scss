@@ -1,6 +1,8 @@
 @import './resets.scss';
 @import './header.scss';
 @import './banner.scss';
+@import './typography.scss';
+@import './aboutme.scss';
 
 .container {
   max-width: 930px;
@@ -9,16 +11,6 @@
 
 .link {
   text-decoration: none;
-}
-
-.h1 {
-  font-family: 'Overpass', Arial, Helvetica, sans-serif;
-  font-size: 50px;
-}
-
-.p {
-  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
-  font-size: 20px;
 }
 
 .block__heading,
@@ -52,4 +44,11 @@
 .btn--outline {
   border: 3px solid #ef6c00;
   color: #ef6c00;
+}
+
+.btn--text {
+  background: none;
+  border: none;
+  color: #ef6c00;
+  width: auto;
 }

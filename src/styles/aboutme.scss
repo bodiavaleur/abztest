@@ -1,0 +1,22 @@
+.aboutme {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+
+  &__heading {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .textblock {
+    width: 55%;
+    margin-left: 30px;
+
+    &__paragraph {
+      margin-top: 20px;
+      margin-bottom: 25px;
+    }
+  }
+}
