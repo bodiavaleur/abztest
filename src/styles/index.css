@@ -187,6 +187,7 @@ table {
 .banner {
   height: 580px;
   width: 100vw;
+  margin-bottom: 140px;
   background-image: url("./images/bg-1.jpg");
   background-size: cover;
   background-position: center center;
@@ -204,6 +205,7 @@ table {
 .h2,
 .h3 {
   font-family: "Overpass", Arial, Helvetica, sans-serif;
+  line-height: 1.2;
 }
 
 .h1 {
@@ -220,6 +222,7 @@ table {
 
 .p {
   font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+  line-height: 1.2;
 }
 
 .p--lg {
@@ -239,6 +242,7 @@ table {
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  margin-bottom: 130px;
 }
 .aboutme__heading {
   text-align: center;
@@ -254,9 +258,29 @@ table {
   margin-bottom: 25px;
 }
 
-.container {
-  max-width: 930px;
+.relationships__heading {
+  width: 60%;
   margin: 0 auto;
+  text-align: center;
+}
+.relationships__cards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-top: 60px;
+  text-align: start;
+}
+.relationships__cards .skillcard {
+  width: 33%;
+}
+.relationships__cards .skillcard__image {
+  margin-bottom: 30px;
+}
+
+.container {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .link {

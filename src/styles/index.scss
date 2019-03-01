@@ -3,10 +3,12 @@
 @import './banner.scss';
 @import './typography.scss';
 @import './aboutme.scss';
+@import './relationships.scss';
 
 .container {
-  max-width: 930px;
-  margin: 0 auto;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .link {

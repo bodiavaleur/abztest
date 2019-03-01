@@ -1,0 +1,23 @@
+.relationships {
+  &__heading {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-top: 60px;
+    text-align: start;
+
+    .skillcard {
+      width: 33%;
+
+      &__image {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
