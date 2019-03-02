@@ -306,6 +306,29 @@ table {
   margin-right: 125px;
 }
 
+.users-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.users-section__heading {
+  margin-bottom: 30px;
+}
+.users-section__paragraph {
+  margin-bottom: 60px;
+}
+.users-section .users {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.users-section .users__avatar {
+  border-radius: 100%;
+}
+
 .container {
   max-width: 1170px;
   margin-left: auto;
@@ -327,7 +350,6 @@ table {
 }
 
 .btn {
-  display: inline-block;
   width: 290px;
   height: 40px;
   border: none;
@@ -354,6 +376,21 @@ table {
   border: none;
   color: #ef6c00;
   width: auto;
+}
+
+.user {
+  width: 345px;
+  height: 110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 60px;
+}
+.user__avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  align-self: flex-start;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -3,7 +3,8 @@ import {
   Banner,
   Relationships,
   AboutMe,
-  Requirements
+  Requirements,
+  Users
 } from './components/molecules';
 import { Header } from './components/organisms/';
 import React, { Component } from 'react';
@@ -18,6 +19,7 @@ export class AbzApp extends Component {
           <AboutMe />
           <Relationships />
           <Requirements />
+          <Users />
         </main>
       </Router>
     );

@@ -5,7 +5,7 @@
 @import './aboutme.scss';
 @import './relationships.scss';
 @import './requirements.scss';
-@import './users.scss';
+@import './users-section.scss';
 
 .container {
   max-width: 1170px;
@@ -28,7 +28,6 @@
 }
 
 .btn {
-  display: inline-block;
   width: 290px;
   height: 40px;
   border: none;
@@ -55,4 +54,20 @@
   border: none;
   color: #ef6c00;
   width: auto;
+}
+
+.user {
+  width: 345px;
+  height: 110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 60px;
+
+  &__avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    align-self: flex-start;
+  }
 }
