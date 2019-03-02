@@ -1,5 +1,6 @@
 export { Navbar } from './Navbar';
-export { User } from './User';
+export { HeaderUser } from './HeaderUser';
 export { Banner } from './Banner';
 export { AboutMe } from './AboutMe';
 export { Relationships } from './Relationships';
+export { Requirements } from './Requirements';

@@ -160,24 +160,24 @@ table {
   margin: 0 13px;
   color: black;
 }
-.header__content .user {
+.header__content .headeruser {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.header__content .user .group {
+.header__content .headeruser .group {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
-.header__content .user .group__name {
+.header__content .headeruser .group__name {
   font-size: 13px;
 }
-.header__content .user .group__email {
+.header__content .headeruser .group__email {
   font-size: 12px;
   color: #a7a7a7;
 }
-.header__content .user__avatar {
+.header__content .headeruser__avatar {
   height: 40px;
   width: 40px;
   border-radius: 100%;
@@ -258,8 +258,11 @@ table {
   margin-bottom: 25px;
 }
 
+.relationships {
+  margin-bottom: 145px;
+}
 .relationships__heading {
-  width: 60%;
+  width: 50%;
   margin: 0 auto;
   text-align: center;
 }
@@ -275,6 +278,32 @@ table {
 }
 .relationships__cards .skillcard__image {
   margin-bottom: 30px;
+}
+
+.requirements {
+  width: 100vw;
+  height: 692px;
+  background-image: url("./images/bg-2.jpg");
+  background-size: cover;
+  color: white;
+  margin-bottom: 140px;
+}
+.requirements .content {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  align-content: center;
+  height: 100%;
+}
+.requirements .content__heading {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 60px;
+}
+.requirements .content__paragraph {
+  width: 550px;
+  line-height: 1.3;
+  margin-right: 125px;
 }
 
 .container {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Logo } from '../atoms';
-import { Navbar, User } from '../molecules';
+import { Navbar, HeaderUser } from '../molecules';
 
 export const Header = () => {
   return (
@@ -8,7 +8,7 @@ export const Header = () => {
       <div className="container header__content">
         <Logo />
         <Navbar />
-        <User
+        <HeaderUser
           name="Superstar"
           email="Superstar@gmail.com"
           avatar="./imgs/user-superstar-2x.jpg"
