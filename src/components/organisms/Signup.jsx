@@ -1,12 +1,12 @@
 import React from 'react';
-import { Input } from '../atoms/Inputs';
+import { Input, Select, File } from '../atoms/';
 import { Formik, Form } from 'formik';
 
 export const Signup = () => {
   return (
-    <section>
-      <h2 className="h2">Register to get a work</h2>
-      <p className="p p--md">
+    <section className="container signup">
+      <h2 className="h2 signup__heading">Register to get a work</h2>
+      <p className="p p--md signup__paragraph">
         Attention! After successful registration and alert, update the list of
         users in the block from the top
       </p>
@@ -56,6 +56,8 @@ const SignupForm = () => (
           onBlurHandler={handleBlur}
           onChangeHandler={handleChange}
         />
+        <Select />
+        <File />
       </Form>
     )}
   />

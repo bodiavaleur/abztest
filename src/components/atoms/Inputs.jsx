@@ -25,3 +25,29 @@ export const Input = ({
     </fieldset>
   );
 };
+
+export const Select = () => {
+  return (
+    <select className="select">
+      <option className="select__opt">opt1</option>
+      <option className="select__opt">opt2</option>
+      <option className="select__opt">opt3</option>
+      <option className="select__opt">opt4</option>
+    </select>
+  );
+};
+
+export const File = () => {
+  return (
+    <div className="inputfile">
+      <span className="inputfile__label">Upload your file</span>
+      <input
+        className="inputfile__file"
+        type="file"
+        name="file"
+        placeholder="Upload your photo"
+      />
+      <button className="btn btn--outline btn--file">Upload</button>
+    </div>
+  );
+};

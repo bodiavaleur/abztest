@@ -47,6 +47,7 @@
 .btn--outline {
   border: 3px solid #ef6c00;
   color: #ef6c00;
+  background: white;
 }
 
 .btn--text {
@@ -54,6 +55,14 @@
   border: none;
   color: #ef6c00;
   width: auto;
+}
+
+.btn--file {
+  width: 30%;
+  height: 56px;
+  position: absolute;
+  right: 0;
+  z-index: 0;
 }
 
 .user {
@@ -72,12 +81,19 @@
   }
 }
 
-.fieldset {
+.fieldset,
+.select,
+.inputfile {
   border: 1px solid #989797;
-  width: 360px;
-  height: 56px;
   border-radius: 5px;
+}
+
+.fieldset {
+  width: 32%;
+  height: 56px;
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+  margin-bottom: 40px;
+  position: relative;
 
   &__label {
     margin-left: 20px;
@@ -88,12 +104,60 @@
     border: none;
     outline: none;
     width: 100%;
-    height: 100%;
+    height: 35px;
     font-size: 16px;
+    padding-left: 20px;
+    box-sizing: border-box;
+  }
+}
+
+.inputfile {
+  width: 49%;
+  position: relative;
+
+  &__file {
+    background: red;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__label {
+    margin-left: 20px;
+    line-height: 56px;
+  }
+}
+
+.signup {
+  height: 40vh;
+  &__heading,
+  &__paragraph {
+    text-align: center;
   }
 }
 
 .signup-form {
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.select {
+  width: 49%;
+  height: 56px;
+  background: none;
+  position: relative;
+
+  &:active {
+    outline: none;
+    border: none;
+    box-shadow: 0 0 10px #ccc;
+  }
+
+  &__opt {
+    border: none;
+    color: red;
+  }
 }
