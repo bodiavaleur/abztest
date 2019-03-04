@@ -5,3 +5,4 @@ export { AboutMe } from './AboutMe';
 export { Relationships } from './Relationships';
 export { Requirements } from './Requirements';
 export { Users } from './Users';
+export { SignupForm } from './SignupForm';

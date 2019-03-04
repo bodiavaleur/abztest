@@ -1,0 +1,36 @@
+.btn {
+  width: 290px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 40px;
+  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.btn--solid {
+  background-color: #ef6c00;
+  color: white;
+}
+
+.btn--outline {
+  border: 3px solid #ef6c00;
+  color: #ef6c00;
+  background: white;
+}
+
+.btn--text {
+  background: none;
+  border: none;
+  color: #ef6c00;
+  width: auto;
+}
+
+.btn__file {
+  width: 30%;
+  height: 56px;
+  line-height: 56px;
+  border-radius: 0 5px 5px 0;
+}

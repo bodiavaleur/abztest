@@ -1,4 +1,5 @@
 import React from 'react';
+import MediaQuery from 'react-responsive';
 
 export const Input = ({
   withStyle,
@@ -8,46 +9,56 @@ export const Input = ({
   placeholder,
   value,
   onChangeHandler,
-  onBlurHandler
+  onBlurHandler,
+  error
 }) => {
   return (
-    <fieldset className={`fieldset fieldset-${withStyle}`}>
-      <legend className="fieldset__label">{label}</legend>
-      <input
-        className="fieldset__input"
-        type={type}
-        placeholder={placeholder}
-        value={value}
-        name={name}
-        onBlur={onBlurHandler}
-        onChange={onChangeHandler}
-      />
-    </fieldset>
+    <div className="fieldset-wrapper">
+      <fieldset className={`fieldset fieldset-${withStyle}`}>
+        <legend className="fieldset__label">{label}</legend>
+        <input
+          className="fieldset__input"
+          type={type}
+          placeholder={placeholder}
+          value={value}
+          name={name}
+          onBlur={onBlurHandler}
+          onChange={onChangeHandler}
+        />
+      </fieldset>
+      {error ? <span className="inp-error">{error}</span> : null}
+    </div>
   );
 };
 
-export const Select = () => {
-  return (
-    <select className="select">
-      <option className="select__opt">opt1</option>
-      <option className="select__opt">opt2</option>
-      <option className="select__opt">opt3</option>
-      <option className="select__opt">opt4</option>
-    </select>
-  );
-};
+// export const CustomSelect = () => {
+//   return (
+//     <select className="select">
+//       <option className="select__opt">opt1</option>
+//       <option className="select__opt">opt2</option>
+//       <option className="select__opt">opt3</option>
+//       <option className="select__opt">opt4</option>
+//     </select>
+//   );
+// };
 
 export const File = () => {
   return (
-    <div className="inputfile">
-      <span className="inputfile__label">Upload your file</span>
-      <input
-        className="inputfile__file"
-        type="file"
-        name="file"
-        placeholder="Upload your photo"
-      />
-      <button className="btn btn--outline btn--file">Upload</button>
+    <div className="inputfile-wrapper">
+      <div className="inputfile">
+        <span className="inputfile__filename">Upload your photo</span>
+        <input className="inputfile__file" type="file" id="file" />
+      </div>
+      <MediaQuery minWidth={768}>
+        <label htmlFor="file" className="btn btn--outline btn__file">
+          Upload
+        </label>
+      </MediaQuery>
+      <MediaQuery maxWidth={768}>
+        <label htmlFor="file" className="btn btn--outline btn__file">
+          <img src="./icons/upload.svg" alt="upload" />
+        </label>
+      </MediaQuery>
     </div>
   );
 };

@@ -9,6 +9,7 @@
   .content {
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-between;
     align-items: center;
     align-content: center;
     height: 100%;
@@ -20,9 +21,12 @@
     }
 
     &__paragraph {
-      width: 550px;
+      width: 47%;
       line-height: 1.3;
-      margin-right: 125px;
+    }
+
+    &__image {
+      width: 45%;
     }
   }
 }

@@ -6,7 +6,7 @@ import {
   Requirements,
   Users
 } from './components/molecules';
-import { Header, Signup } from './components/organisms/';
+import { Header, Signup, Footer } from './components/organisms/';
 import React, { Component } from 'react';
 
 export class AbzApp extends Component {
@@ -21,6 +21,7 @@ export class AbzApp extends Component {
           <Requirements />
           <Users />
           <Signup />
+          <Footer />
         </main>
       </Router>
     );

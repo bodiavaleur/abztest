@@ -6,6 +6,8 @@
 @import './relationships.scss';
 @import './requirements.scss';
 @import './users-section.scss';
+@import './buttons.scss';
+@import './inputs.scss';
 
 .container {
   max-width: 1170px;
@@ -27,46 +29,8 @@
   margin-bottom: 45px;
 }
 
-.btn {
-  width: 290px;
-  height: 40px;
-  border: none;
-  border-radius: 5px;
-  text-align: center;
-  line-height: 40px;
-  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.btn--solid {
-  background-color: #ef6c00;
-  color: white;
-}
-
-.btn--outline {
-  border: 3px solid #ef6c00;
-  color: #ef6c00;
-  background: white;
-}
-
-.btn--text {
-  background: none;
-  border: none;
-  color: #ef6c00;
-  width: auto;
-}
-
-.btn--file {
-  width: 30%;
-  height: 56px;
-  position: absolute;
-  right: 0;
-  z-index: 0;
-}
-
 .user {
-  width: 345px;
+  width: 32%;
   height: 110px;
   display: flex;
   justify-content: space-between;
@@ -78,86 +42,98 @@
     height: 70px;
     border-radius: 100%;
     align-self: flex-start;
-  }
-}
-
-.fieldset,
-.select,
-.inputfile {
-  border: 1px solid #989797;
-  border-radius: 5px;
-}
-
-.fieldset {
-  width: 32%;
-  height: 56px;
-  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
-  margin-bottom: 40px;
-  position: relative;
-
-  &__label {
-    margin-left: 20px;
-    padding: 0 4px;
-  }
-
-  &__input {
-    border: none;
-    outline: none;
-    width: 100%;
-    height: 35px;
-    font-size: 16px;
-    padding-left: 20px;
-    box-sizing: border-box;
-  }
-}
-
-.inputfile {
-  width: 49%;
-  position: relative;
-
-  &__file {
-    background: red;
-    position: absolute;
-    left: 0;
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  &__label {
-    margin-left: 20px;
-    line-height: 56px;
+    margin-right: 10px;
   }
 }
 
 .signup {
-  height: 40vh;
+  height: 450px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
   &__heading,
   &__paragraph {
     text-align: center;
   }
 }
 
-.signup-form {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-}
+.footer {
+  height: 314px;
+  background-color: #283593;
+  color: white;
+  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+  font-size: 16px;
 
-.select {
-  width: 49%;
-  height: 56px;
-  background: none;
-  position: relative;
-
-  &:active {
-    outline: none;
-    border: none;
-    box-shadow: 0 0 10px #ccc;
+  .container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
   }
 
-  &__opt {
-    border: none;
-    color: red;
+  &__head {
+    height: 85px;
+    width: 100%;
+    border-bottom: 1px solid #5f5fc4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+
+    .logo {
+      width: 134px;
+      height: 24px;
+      filter: invert(1);
+    }
+
+    .navbar__link {
+      margin: 0 15px;
+      color: white;
+    }
+  }
+
+  &__contacts {
+    height: 110px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 20px;
+
+    .contact-img {
+      margin-right: 10px;
+    }
+  }
+
+  .linkgroup {
+    height: 110px;
+    width: 60%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-end;
+
+    &__link {
+      margin: 5px 0;
+      color: white;
+    }
+  }
+
+  &__bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+    font-size: 12px;
+
+    .icn {
+      margin-left: 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    max-width: 930px;
   }
 }
