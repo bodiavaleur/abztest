@@ -49,12 +49,12 @@ export const File = () => {
         <span className="inputfile__filename">Upload your photo</span>
         <input className="inputfile__file" type="file" id="file" />
       </div>
-      <MediaQuery minWidth={768}>
+      <MediaQuery minWidth={600}>
         <label htmlFor="file" className="btn btn--outline btn__file">
           Upload
         </label>
       </MediaQuery>
-      <MediaQuery maxWidth={768}>
+      <MediaQuery maxWidth={599}>
         <label htmlFor="file" className="btn btn--outline btn__file">
           <img src="./icons/upload.svg" alt="upload" />
         </label>

@@ -31,7 +31,9 @@ export const Relationships = () => {
 const SkillCard = ({ image, title, children }) => (
   <div className="skillcard">
     <img className="skillcard__image" src={image} alt="skill-img" />
-    <h3 className="h3 skillcard__heading">{title}</h3>
-    <p className="p p--md skillcard__paragraph">{children}</p>
+    <div>
+      <h3 className="h3 skillcard__heading">{title}</h3>
+      <p className="p p--md skillcard__paragraph">{children}</p>
+    </div>
   </div>
 );

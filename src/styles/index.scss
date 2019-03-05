@@ -9,10 +9,19 @@
 @import './buttons.scss';
 @import './inputs.scss';
 
+main {
+  overflow: hidden;
+}
 .container {
   max-width: 1170px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 20px;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
 }
 
 .link {
@@ -44,6 +53,10 @@
     align-self: flex-start;
     margin-right: 10px;
   }
+
+  .p {
+    color: #5c5b5b;
+  }
 }
 
 .signup {
@@ -55,6 +68,10 @@
   &__heading,
   &__paragraph {
     text-align: center;
+  }
+
+  &__paragraph {
+    width: 50%;
   }
 }
 
@@ -137,3 +154,45 @@
     max-width: 930px;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  .relationships__cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .skillcard {
+      display: flex;
+      width: 75%;
+
+      &__image {
+        margin-right: 30px;
+      }
+    }
+  }
+
+  .user {
+    height: auto;
+    flex-flow: row wrap;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    max-width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+// .user:nth-child(n + 4) {
+//   display: none;
+// }

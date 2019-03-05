@@ -264,13 +264,12 @@ table {
   margin-bottom: 145px;
 }
 .relationships__heading {
-  width: 50%;
+  width: 80%;
   margin: 0 auto;
   text-align: center;
 }
 .relationships__cards {
   display: flex;
-  flex-flow: row wrap;
   justify-content: space-between;
   margin-top: 60px;
   text-align: start;
@@ -299,9 +298,9 @@ table {
   height: 100%;
 }
 .requirements .content__heading {
-  width: 100%;
+  width: 65%;
   text-align: center;
-  margin-bottom: 60px;
+  margin: 0 auto 60px auto;
 }
 .requirements .content__paragraph {
   width: 47%;
@@ -434,10 +433,20 @@ table {
   height: 56px;
 }
 
+main {
+  overflow: hidden;
+}
+
 .container {
   max-width: 1170px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 20px;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
 }
 
 .link {
@@ -469,6 +478,9 @@ table {
   align-self: flex-start;
   margin-right: 10px;
 }
+.user .p {
+  color: #5c5b5b;
+}
 
 .signup {
   height: 450px;
@@ -479,6 +491,9 @@ table {
 }
 .signup__heading, .signup__paragraph {
   text-align: center;
+}
+.signup__paragraph {
+  width: 50%;
 }
 
 .footer {
@@ -548,6 +563,40 @@ table {
 @media only screen and (max-width: 1024px) {
   .container {
     max-width: 930px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  .relationships__cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .relationships__cards .skillcard {
+    display: flex;
+    width: 75%;
+  }
+  .relationships__cards .skillcard__image {
+    margin-right: 30px;
+  }
+
+  .user {
+    height: auto;
+    flex-flow: row wrap;
+    justify-content: center;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    max-width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }
 
