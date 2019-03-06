@@ -21,7 +21,7 @@
       padding-bottom: 3px;
 
       &__link {
-        font-size: 13px;
+        font-size: 0.875rem;
         margin: 0 13px;
         color: black;
       }
@@ -38,11 +38,11 @@
         align-items: flex-end;
 
         &__name {
-          font-size: 13px;
+          font-size: 0.875rem;
         }
 
         &__email {
-          font-size: 12px;
+          font-size: 0.75rem;
           color: #a7a7a7;
         }
       }
