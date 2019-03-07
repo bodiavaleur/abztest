@@ -3,7 +3,7 @@ import { Logo } from '../atoms';
 import { Navbar, HeaderUser } from '../molecules';
 import MediaQuery from 'react-responsive';
 
-export const Header = () => {
+export const Header = props => {
   return (
     <header className="header">
       <div className="container header__content">
@@ -17,7 +17,7 @@ export const Header = () => {
           />
         </MediaQuery>
         <MediaQuery maxWidth={768}>
-          <button className="menu-btn">
+          <button className="menu-btn" onClick={props.clickMenu}>
             <img src="./icons/line-menu.svg" alt="btn-menu" />
           </button>
         </MediaQuery>

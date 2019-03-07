@@ -13,5 +13,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    &__heading,
+    &__paragraph {
+      width: 450px;
+    }
+
+    &__paragraph {
+      margin-top: 30px;
+      margin-bottom: 45px;
+    }
   }
 }

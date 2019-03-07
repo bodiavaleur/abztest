@@ -1,0 +1,15 @@
+.signup {
+  height: 450px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  &__heading,
+  &__paragraph {
+    text-align: center;
+  }
+
+  &__paragraph {
+    width: 50%;
+  }
+}

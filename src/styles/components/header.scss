@@ -26,33 +26,33 @@
         color: black;
       }
     }
+  }
+}
 
-    .headeruser {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
+.headeruser {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
-      .group {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
+  .group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 
-        &__name {
-          font-size: 0.875rem;
-        }
-
-        &__email {
-          font-size: 0.75rem;
-          color: #a7a7a7;
-        }
-      }
-
-      &__avatar {
-        height: 40px;
-        width: 40px;
-        border-radius: 100%;
-        margin: 0 12px;
-      }
+    &__name {
+      font-size: 0.875rem;
     }
+
+    &__email {
+      font-size: 0.75rem;
+      color: #a7a7a7;
+    }
+  }
+
+  &__avatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    margin: 0 12px;
   }
 }

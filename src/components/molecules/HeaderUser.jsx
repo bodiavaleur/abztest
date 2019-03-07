@@ -9,7 +9,7 @@ export const HeaderUser = ({ name, email, avatar }) => {
         <span className="group__email">{email}</span>
       </div>
       <img className="headeruser__avatar" src={avatar} alt={name} />
-      <Link to="#">
+      <Link to="#" className="logout-btn">
         <img src="./icons/sign-out.svg" alt="sign-out" />
       </Link>
     </div>
