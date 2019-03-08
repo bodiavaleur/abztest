@@ -32,12 +32,22 @@ main {
 }
 
 .user {
-  width: 32%;
-  height: 110px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  flex-grow: 1;
+  max-width: 33%;
+  flex-basis: 33%;
   margin-bottom: 60px;
+
+  .info {
+    &__name,
+    &__about,
+    &__email,
+    &__phone {
+      max-width: 250px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
 
   &__avatar {
     width: 70px;
@@ -116,7 +126,7 @@ main {
 
   .users-section {
     .users {
-      flex-flow: column nowrap;
+      flex-flow: column wrap;
 
       .user:nth-child(n + 4) {
         display: none;

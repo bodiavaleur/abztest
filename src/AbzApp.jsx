@@ -15,6 +15,10 @@ class AbzApp extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      page: 1
+    };
+
     this.handleMenuClick = this.handleMenuClick.bind(this);
   }
 
@@ -26,10 +30,18 @@ class AbzApp extends Component {
     return this.props.dispatch(openMenu(true));
   }
 
-  componentDidMount() {
-    fetch('https://frontend-test-assignment-api.abz.agency/api/v1/users')
+  getUsersData() {
+    const page = this.state.page;
+    fetch(
+      `https://frontend-test-assignment-api.abz.agency/api/v1/users?page=${page}&count=6`
+    )
       .then(res => res.json())
       .then(res => this.props.dispatch(loadUsers(res.users)));
+    this.setState(() => ({ page: this.state.page + 1 }));
+  }
+
+  componentDidMount() {
+    this.getUsersData();
   }
 
   render() {
@@ -45,7 +57,10 @@ class AbzApp extends Component {
           <AboutMe />
           <Relationships />
           <Requirements />
-          <Users users={this.props.users} />
+          <Users
+            users={this.props.users}
+            showMore={() => this.getUsersData()}
+          />
           <Signup />
           <Footer />
         </main>

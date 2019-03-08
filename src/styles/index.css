@@ -331,10 +331,7 @@ table {
 }
 .users-section .users {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  flex-wrap: wrap;
 }
 
 .footer {
@@ -607,12 +604,16 @@ main {
 }
 
 .user {
-  width: 32%;
-  height: 110px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  flex-grow: 1;
+  max-width: 33%;
+  flex-basis: 33%;
   margin-bottom: 60px;
+}
+.user .info__name, .user .info__about, .user .info__email, .user .info__phone {
+  max-width: 250px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .user__avatar {
   width: 70px;
@@ -682,7 +683,7 @@ main {
   }
 
   .users-section .users {
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
   }
   .users-section .users .user:nth-child(n+4) {
     display: none;

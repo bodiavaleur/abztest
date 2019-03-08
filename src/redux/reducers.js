@@ -14,7 +14,7 @@ export const rootReducer = (state = initialState, { type, payload }) => {
       return Object.assign({}, state, { isMenuOpen: payload });
 
     case LOAD_USERS:
-      return Object.assign({}, state, { users: payload });
+      return Object.assign({}, state, { users: state.users.concat(payload) });
 
     default:
       return state;
