@@ -87,7 +87,7 @@ main {
 
 @media only screen and (max-width: 580px) {
   html {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .container {
@@ -98,9 +98,17 @@ main {
     text-align: center;
   }
 
+  .header__content {
+    flex-direction: row;
+  }
+
+  .side-menu {
+    width: 60vw;
+  }
+
   .banner {
     .block__paragraph {
-      max-width: 25ch;
+      width: 90%;
       height: 75px;
       overflow: hidden;
     }

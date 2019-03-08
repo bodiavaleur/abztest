@@ -1,7 +1,8 @@
-import { OPEN_MENU, CLOSE_MENU } from './actions';
+import { OPEN_MENU, CLOSE_MENU, LOAD_USERS } from './actions';
 
 const initialState = {
-  isMenuOpen: false
+  isMenuOpen: false,
+  users: []
 };
 
 export const rootReducer = (state = initialState, { type, payload }) => {
@@ -11,6 +12,9 @@ export const rootReducer = (state = initialState, { type, payload }) => {
 
     case CLOSE_MENU:
       return Object.assign({}, state, { isMenuOpen: payload });
+
+    case LOAD_USERS:
+      return Object.assign({}, state, { users: payload });
 
     default:
       return state;

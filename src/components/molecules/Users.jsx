@@ -2,7 +2,7 @@ import React from 'react';
 import { User } from './User';
 import { ButtonLink } from '../atoms';
 
-export const Users = () => {
+export const Users = ({ users }) => {
   return (
     <section className="container users-section">
       <h2 className="h2 users-section__heading">Our cheerful users</h2>
@@ -10,48 +10,17 @@ export const Users = () => {
         Attention! Sorting users by registration date
       </p>
       <div className="users">
-        <User
-          avatar="./imgs/user-noah-2x.jpg"
-          name="Noah"
-          about="Leading specialist of the Control Department"
-          email="noah.controldepartment@gmail.com"
-          phone="+38 (050) 678 03 24"
-        />
-        <User
-          avatar="./imgs/user-noah-2x.jpg"
-          name="Noah"
-          about="Leading specialist of the Control Department"
-          email="noah.controldepartment@gmail.com"
-          phone="+38 (050) 678 03 24"
-        />
-        <User
-          avatar="./imgs/user-noah-2x.jpg"
-          name="Noah"
-          about="Leading specialist of the Control Department"
-          email="noah.controldepartment@gmail.com"
-          phone="+38 (050) 678 03 24"
-        />
-        <User
-          avatar="./imgs/user-noah-2x.jpg"
-          name="Noah"
-          about="Leading specialist of the Control Department"
-          email="noah.controldepartment@gmail.com"
-          phone="+38 (050) 678 03 24"
-        />
-        <User
-          avatar="./imgs/user-noah-2x.jpg"
-          name="Noah"
-          about="Leading specialist of the Control Department"
-          email="noah.controldepartment@gmail.com"
-          phone="+38 (050) 678 03 24"
-        />
-        <User
-          avatar="./imgs/user-noah-2x.jpg"
-          name="Noah"
-          about="Leading specialist of the Control Department"
-          email="noah.controldepartment@gmail.com"
-          phone="+38 (050) 678 03 24"
-        />
+        {!!users.length
+          ? users.map(user => (
+              <User
+                avatar={user.photo}
+                name={user.name}
+                about={user.position}
+                email={user.email}
+                phone={user.phone}
+              />
+            ))
+          : null}
       </div>
       <ButtonLink withStyle="outline" to="/" label="Show more" />
     </section>

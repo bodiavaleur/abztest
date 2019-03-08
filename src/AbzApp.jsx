@@ -9,7 +9,7 @@ import {
 import { Header, Signup, Footer, Menu } from './components/organisms/';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { closeMenu, openMenu } from './redux/actionCreators';
+import { closeMenu, openMenu, loadUsers } from './redux/actionCreators';
 
 class AbzApp extends Component {
   constructor(props) {
@@ -26,6 +26,12 @@ class AbzApp extends Component {
     return this.props.dispatch(openMenu(true));
   }
 
+  componentDidMount() {
+    fetch('https://frontend-test-assignment-api.abz.agency/api/v1/users')
+      .then(res => res.json())
+      .then(res => this.props.dispatch(loadUsers(res.users)));
+  }
+
   render() {
     return (
       <Router>
@@ -39,7 +45,7 @@ class AbzApp extends Component {
           <AboutMe />
           <Relationships />
           <Requirements />
-          <Users />
+          <Users users={this.props.users} />
           <Signup />
           <Footer />
         </main>
@@ -50,7 +56,8 @@ class AbzApp extends Component {
 
 const mapStateToProps = state => {
   return {
-    isMenuOpen: state.isMenuOpen
+    isMenuOpen: state.isMenuOpen,
+    users: state.users
   };
 };
 
