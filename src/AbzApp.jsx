@@ -9,7 +9,14 @@ import {
 import { Header, Signup, Footer, Menu } from './components/organisms/';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { closeMenu, openMenu, loadUsers } from './redux/actionCreators';
+import {
+  closeMenu,
+  openMenu,
+  loadUsers,
+  setCurrentUser,
+  setToken
+} from './redux/actionCreators';
+import { getAllUsers, getCurrentUser, getToken } from './utils';
 
 class AbzApp extends Component {
   constructor(props) {
@@ -30,26 +37,28 @@ class AbzApp extends Component {
     return this.props.dispatch(openMenu(true));
   }
 
-  getUsersData() {
+  fetchAllUsersData() {
     const page = this.state.page;
-    fetch(
-      `https://frontend-test-assignment-api.abz.agency/api/v1/users?page=${page}&count=6`
-    )
-      .then(res => res.json())
-      .then(res => this.props.dispatch(loadUsers(res.users)));
-    this.setState(() => ({ page: this.state.page + 1 }));
+    getAllUsers(page, data => this.props.dispatch(loadUsers(data)));
+    return this.setState(() => ({ page: this.state.page + 1 }));
   }
 
   componentDidMount() {
-    this.getUsersData();
+    this.fetchAllUsersData();
+    getCurrentUser(1, data => this.props.dispatch(setCurrentUser(data)));
+    getToken(token => this.props.dispatch(setToken(token)));
   }
 
   render() {
     return (
       <Router>
         <main>
-          <Header clickMenu={() => this.handleMenuClick()} />
+          <Header
+            user={this.props.currentUser}
+            clickMenu={() => this.handleMenuClick()}
+          />
           <Menu
+            user={this.props.currentUser}
             isMenuOpen={this.props.isMenuOpen}
             clickMenu={() => this.handleMenuClick()}
           />
@@ -59,7 +68,7 @@ class AbzApp extends Component {
           <Requirements />
           <Users
             users={this.props.users}
-            showMore={() => this.getUsersData()}
+            showMore={() => this.fetchAllUsersData()}
           />
           <Signup />
           <Footer />
@@ -72,7 +81,9 @@ class AbzApp extends Component {
 const mapStateToProps = state => {
   return {
     isMenuOpen: state.isMenuOpen,
-    users: state.users
+    users: state.users,
+    currentUser: state.currentUser,
+    token: state.token
   };
 };
 

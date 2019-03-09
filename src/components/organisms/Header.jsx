@@ -3,21 +3,17 @@ import { Logo } from '../atoms';
 import { Navbar, HeaderUser } from '../molecules';
 import MediaQuery from 'react-responsive';
 
-export const Header = props => {
+export const Header = ({ user, clickMenu }) => {
   return (
     <header className="header">
       <div className="container header__content">
         <Logo />
         <MediaQuery minWidth={769}>
           <Navbar />
-          <HeaderUser
-            name="Superstar"
-            email="Superstar@gmail.com"
-            avatar="./imgs/user-superstar-2x.jpg"
-          />
+          <HeaderUser name={user.name} email={user.email} avatar={user.photo} />
         </MediaQuery>
         <MediaQuery maxWidth={768}>
-          <button className="menu-btn" onClick={props.clickMenu}>
+          <button className="menu-btn" onClick={clickMenu}>
             <img src="./icons/line-menu.svg" alt="btn-menu" />
           </button>
         </MediaQuery>

@@ -71,8 +71,8 @@ const LinkGroup = () => {
   return (
     <MediaQuery minWidth={1000}>
       <div className="linkgroup">
-        {links.map(({ name, link }) => (
-          <Link className="link linkgroup__link" to={link}>
+        {links.map(({ name, link }, idx) => (
+          <Link key={idx} className="link linkgroup__link" to={link}>
             {name}
           </Link>
         ))}

@@ -42,12 +42,18 @@ export const Input = ({
 //   );
 // };
 
-export const File = () => {
+export const File = ({ onChange }) => {
   return (
     <div className="inputfile-wrapper">
       <div className="inputfile">
         <span className="inputfile__filename">Upload your photo</span>
-        <input className="inputfile__file" type="file" id="file" />
+        <input
+          className="inputfile__file"
+          type="file"
+          id="file"
+          accept="image/*"
+          onChange={onChange}
+        />
       </div>
       <MediaQuery minWidth={600}>
         <label htmlFor="file" className="btn btn--outline btn__file">

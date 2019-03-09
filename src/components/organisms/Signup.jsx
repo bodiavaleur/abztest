@@ -1,5 +1,5 @@
 import React from 'react';
-import { SignupForm } from '../molecules';
+import SignupForm from '../molecules/SignupForm';
 
 export const Signup = () => {
   return (
@@ -10,7 +10,9 @@ export const Signup = () => {
         users in the block from the top
       </p>
       <SignupForm />
-      <button className="btn btn--solid">Sign Up</button>
+      <button type="submit" form="signup-form" className="btn btn--solid">
+        Sign Up
+      </button>
     </section>
   );
 };

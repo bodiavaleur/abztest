@@ -3,13 +3,12 @@ import { User } from './User';
 import { ButtonLink } from '../atoms';
 
 export const Users = ({ users, showMore }) => {
-  // const isNotEmpty = users[users.length - 1];
+  const isNotEmpty = users[users.length - 1];
 
-  // if (isNotEmpty) {
-  //   users.pop();
-  // }
-  // console.log('isNotEmpty :', isNotEmpty);
-  // console.log('users :', users);
+  if (!isNotEmpty) {
+    users.pop();
+  }
+
   const sortedUsers = users.sort(
     (a, b) => b['registration_timestamp'] - a['registration_timestamp']
   );
@@ -21,8 +20,9 @@ export const Users = ({ users, showMore }) => {
       </p>
       <div className="users">
         {!!sortedUsers.length
-          ? sortedUsers.map(user => (
+          ? sortedUsers.map((user, idx) => (
               <User
+                key={idx}
                 avatar={user.photo}
                 name={user.name}
                 about={user.position}
@@ -32,11 +32,11 @@ export const Users = ({ users, showMore }) => {
             ))
           : null}
       </div>
-      {/* {!!isNotEmpty ? ( */}
-      <button className="btn btn--solid" onClick={showMore}>
-        Show more
-      </button>
-      {/* ) : null} */}
+      {!!isNotEmpty ? (
+        <button className="btn btn--solid" onClick={showMore}>
+          Show more
+        </button>
+      ) : null}
     </section>
   );
 };

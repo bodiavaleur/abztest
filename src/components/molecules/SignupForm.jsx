@@ -1,11 +1,19 @@
 import React from 'react';
 import { Formik, Form } from 'formik';
 import { Input, File } from '../atoms/';
-import Select from 'react-select';
+import { connect } from 'react-redux';
+import { submitData } from '../../utils';
 
-export const SignupForm = ({ onSelectChange }) => (
+const SignupForm = ({ token }) => (
   <Formik
-    initialValues={{ name: '', email: '', phone: '' }}
+    initialValues={{
+      name: '',
+      email: '',
+      phone: '',
+      photo: '',
+      position_id: ''
+    }}
+    onSubmit={values => submitData(values, token)}
     render={({
       values,
       errors,
@@ -14,9 +22,10 @@ export const SignupForm = ({ onSelectChange }) => (
       handleBlur,
       handleChange,
       handleSubmit,
-      isSubmitting
+      isSubmitting,
+      setFieldValue
     }) => (
-      <Form className="signup-form" onSubmit={handleSubmit}>
+      <Form className="signup-form" id="signup-form" onSubmit={handleSubmit}>
         <Input
           type="text"
           label="Name"
@@ -47,14 +56,20 @@ export const SignupForm = ({ onSelectChange }) => (
         <select
           className="select"
           placeholder="Select your position"
-          onChange={onSelectChange}>
+          onChange={() => setFieldValue('position_id', 2)}>
           <option className="select__option">Frontend Developer</option>
           <option className="select__option">Backend Developer</option>
           <option className="select__option">QA</option>
           <option className="select__option">Designer</option>
         </select>
-        <File />
+        <File onChange={e => setFieldValue('photo', e.target.files[0])} />
       </Form>
     )}
   />
 );
+
+const mapStateToProps = state => ({
+  token: state.token
+});
+
+export default connect(mapStateToProps)(SignupForm);
